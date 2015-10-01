@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Momeme</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="please_enter_name">Please Enter Name</string>
+    <string name="enter">Enter</string>
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+	<string name="loading">Loading</string>
+	<string name="randQuote">Random Quote</string>
+	<string name="addQuote">Add a Quote</string>
+	<string name="submit">Submit</string>
+	<string name="toMom">What did you say?</string>
+	<string name="fromMom">What did mom say?</string>
+	<string name="spinnerDefault">Select a Kid</string>
+	<string name="cancel">Cancel</string>
+	<string name="deleteDB">Del DB</string>
+		
+	<string-array name="kids">
+	    <item>Jenny</item>
+	    <item>Adeline</item>
+	    <item>Iris</item>
+	    <item>Freddy</item>
+	    <item>Stranger Danger</item>
+	</string-array>
+	
+</resources>
