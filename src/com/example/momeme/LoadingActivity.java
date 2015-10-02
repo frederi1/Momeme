@@ -1,8 +1,6 @@
 package com.example.momeme;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,13 +9,19 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.media.SoundPool;
+import android.media.SoundPool.OnLoadCompleteListener;
+import android.media.AudioManager;
 
 public class LoadingActivity extends Activity {
 	
 	private Thread loadingThread;
-	//public final String username;
+	private SoundPool sp;
+	private int soundID;
+	boolean loaded = false;
 	
 	RelativeLayout rl;
+	int clickCount = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,20 @@ public class LoadingActivity extends Activity {
 		
 		Intent temp = getIntent();
 		final String user = temp.getStringExtra("user");
-		Log.d("Got from Login", user);
+
+		sp = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
+		
+		sp.setOnLoadCompleteListener(new OnLoadCompleteListener() {
+
+			@Override
+			public void onLoadComplete(SoundPool soundPool, int sampleId,
+					int status) {
+				// TODO Auto-generated method stub
+				loaded = true;
+			}
+		});
+		
+		soundID = sp.load(this, R.raw.line_fun, 1);
 		
 		rl = (RelativeLayout) findViewById(R.id.loading_layout);
 		
@@ -34,8 +51,19 @@ public class LoadingActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				MediaPlayer mp = MediaPlayer.create(LoadingActivity.this, R.raw.line_fun);
-				mp.start();
+				//MediaPlayer mp = MediaPlayer.create(LoadingActivity.this, R.raw.line_fun);
+				//mp.start();
+				
+				 AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+				 float actualVolume = (float) audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+				 float maxVolume = (float) audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+				 float volume = actualVolume / maxVolume;
+				 if (loaded) {
+				        sp.play(soundID, volume, volume, 1, 0, 1f);
+				        //Log.e("Test", "Played sound");
+				      }
+				
+				clickCount++;
 			}
 		});
 		
@@ -49,7 +77,6 @@ public class LoadingActivity extends Activity {
                 } catch (Exception e) {
 
                 } finally {
-                	Log.d("Within thread", user);
                     Intent in = new Intent(LoadingActivity.this, MainActivity.class);
                     in.putExtra("user", user);
                     startActivity(in);
