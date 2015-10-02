@@ -52,6 +52,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
 		randQuoteBut = (Button) findViewById(R.id.button1);
 		addQuoteBut = (Button) findViewById(R.id.button2);
 		cancelBut = (Button) findViewById(R.id.button4);
+		delBut = (Button) findViewById(R.id.button5);
 		
 		toMomET.setVisibility(View.INVISIBLE);
 		fromMomET.setVisibility(View.INVISIBLE);

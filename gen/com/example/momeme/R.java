@@ -9,7 +9,7 @@ package com.example.momeme;
 
 public final class R {
     public static final class array {
-        public static final int kids=0x7f060000;
+        public static final int kids=0x7f070000;
     }
     public static final class attr {
     }
@@ -21,22 +21,23 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090008;
-        public static final int button1=0x7f090000;
-        public static final int button2=0x7f090003;
-        public static final int button3=0x7f090005;
-        public static final int button4=0x7f090006;
-        public static final int button5=0x7f090007;
-        public static final int editText1=0x7f090002;
-        public static final int editText2=0x7f090004;
-        public static final int spinner1=0x7f090001;
+        public static final int action_settings=0x7f0a0009;
+        public static final int button1=0x7f0a0001;
+        public static final int button2=0x7f0a0004;
+        public static final int button3=0x7f0a0006;
+        public static final int button4=0x7f0a0007;
+        public static final int button5=0x7f0a0008;
+        public static final int editText1=0x7f0a0003;
+        public static final int editText2=0x7f0a0005;
+        public static final int loading_layout=0x7f0a0000;
+        public static final int spinner1=0x7f0a0002;
     }
     public static final class layout {
         public static final int activity_loading=0x7f030000;
@@ -44,27 +45,30 @@ public final class R {
         public static final int activity_main=0x7f030002;
     }
     public static final class menu {
-        public static final int loading=0x7f080000;
-        public static final int login=0x7f080001;
-        public static final int main=0x7f080002;
+        public static final int loading=0x7f090000;
+        public static final int login=0x7f090001;
+        public static final int main=0x7f090002;
+    }
+    public static final class raw {
+        public static final int line_fun=0x7f040000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int addQuote=0x7f050009;
-        public static final int app_name=0x7f050000;
-        public static final int cancel=0x7f05000e;
-        public static final int deleteDB=0x7f05000f;
-        public static final int enter=0x7f050004;
-        public static final int fromMom=0x7f05000c;
-        public static final int hello_world=0x7f050001;
-        public static final int loading=0x7f050007;
-        public static final int please_enter_name=0x7f050003;
-        public static final int randQuote=0x7f050008;
-        public static final int spinnerDefault=0x7f05000d;
-        public static final int submit=0x7f05000a;
-        public static final int title_activity_loading=0x7f050005;
-        public static final int title_activity_main=0x7f050006;
-        public static final int toMom=0x7f05000b;
+        public static final int action_settings=0x7f060002;
+        public static final int addQuote=0x7f060009;
+        public static final int app_name=0x7f060000;
+        public static final int cancel=0x7f06000e;
+        public static final int deleteDB=0x7f06000f;
+        public static final int enter=0x7f060004;
+        public static final int fromMom=0x7f06000c;
+        public static final int hello_world=0x7f060001;
+        public static final int loading=0x7f060007;
+        public static final int please_enter_name=0x7f060003;
+        public static final int randQuote=0x7f060008;
+        public static final int spinnerDefault=0x7f06000d;
+        public static final int submit=0x7f06000a;
+        public static final int title_activity_loading=0x7f060005;
+        public static final int title_activity_main=0x7f060006;
+        public static final int toMom=0x7f06000b;
     }
     public static final class style {
         /** 
@@ -88,10 +92,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

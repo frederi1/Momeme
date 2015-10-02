@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper{
 	public static final String DATABASE_NAME = "MOM_QUOTES" ;
 	public static final String DATABASE_TABLE = "userInfo";
+	public static final String DATABASE_MINITABLE = "minigame";
 	
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_NAME = "name";
@@ -20,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	public static final String KEY_FROM_MOM = "from_mom";
 	public static final String KEY_SOURCE = "source";
 	
+	public static final String KEY_CLICKS = "clicks";
 
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME , null, 1);
@@ -31,12 +33,14 @@ public class DBHelper extends SQLiteOpenHelper{
 		db.execSQL(
 				"create table userInfo " +
 				"(_id integer primary key, name text not null, to_mom text, from_mom text, source text not null);"
-				);	
+				);
+		db.execSQL("create table minigame (_id integer primary key, name text not null, clicks integer");
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP table if exists userInfo");
+		db.execSQL("Drop table if exists minigame");
 		onCreate(db);
 	}
 	

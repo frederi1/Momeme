@@ -1,16 +1,23 @@
 package com.example.momeme;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 public class LoadingActivity extends Activity {
 	
 	private Thread loadingThread;
 	//public final String username;
+	
+	RelativeLayout rl;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +28,24 @@ public class LoadingActivity extends Activity {
 		final String user = temp.getStringExtra("user");
 		Log.d("Got from Login", user);
 		
+		rl = (RelativeLayout) findViewById(R.id.loading_layout);
+		
+		rl.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				MediaPlayer mp = MediaPlayer.create(LoadingActivity.this, R.raw.line_fun);
+				mp.start();
+			}
+		});
+		
 		loadingThread = new Thread() {
 
             @Override
             public void run() {
                 try {
                     super.run();
-                    sleep(2000);  //Delay of 10 seconds
+                    sleep(5000);  //Delay of 10 seconds
                 } catch (Exception e) {
 
                 } finally {
